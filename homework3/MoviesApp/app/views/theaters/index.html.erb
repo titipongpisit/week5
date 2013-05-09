@@ -1,0 +1,30 @@
+<h1>Theaters</h1>
+
+<p><%= link_to 'Add a New Theater', "/theaters/new" %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @theaters.each do |theater| %>
+    <tr>
+        <td><%= theater.name %></td>
+        <td><%= theater.address %></td>
+
+      <td><%= link_to 'Show', "/theaters/#{theater.id}" %></td>
+      <td><%= link_to 'Edit', "/theaters/#{theater.id}/edit" %></td>
+      <td><%= link_to 'Destroy', "/theaters/#{theater.id}", method: 'delete', data: { confirm: "Do you really want to delete this theater?" } %></td>
+
+    </tr>
+  <% end %>
+  </body>
+</table>
+

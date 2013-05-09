@@ -1,0 +1,8 @@
+<% if @theater.address.present?
+  require 'open-uri'
+
+  address_parameter = URI.encode(@theater.address)
+%>
+<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;q=<%= address_parameter %>&amp;aq=&amp;sspn=0.081856,0.181789&amp;t=v&amp;ie=UTF8&amp;z=14&amp;output=embed&amp;iwloc=near"></iframe>
+
+<% end %>

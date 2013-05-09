@@ -1,0 +1,20 @@
+<h1>Editing Theater #<%= @theater.id %></h1>
+
+<%= form_tag("/theaters/#{@theater.id}", method: 'put') do %>
+
+  <div>
+    <%= label_tag :name %><br />
+    <%= text_field_tag :name, @theater.name, size: 80 %>
+  </div>
+
+  <div>
+    <%= label_tag :address %><br />
+    <%= text_field_tag :address, @theater.address, size: 80 %>
+  </div>
+
+
+  <div>
+    <%= submit_tag "Update Theater" %>
+  </div>
+
+<% end %>

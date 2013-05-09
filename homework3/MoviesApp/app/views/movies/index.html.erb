@@ -1,0 +1,23 @@
+<%= link_to "Add a New Movie", "/movies/new" %>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Year</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @movies.each do |movie| %>
+    <tr>
+      <td>
+        <%= link_to "Delete", "movies/#{movie.id}", method: 'delete' %>
+        <%= link_to "Edit", "movies/#{movie.id}/edit" %>
+      </td>
+      <td><%= link_to movie.title, "/movies/#{movie.id}" %></td>
+      <td><%= movie.year %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
